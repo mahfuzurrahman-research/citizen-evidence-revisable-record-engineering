@@ -1,0 +1,9 @@
+node_id,node_type,label
+N1,input,synthetic scenarios
+N2,computation,primary computation
+N3,verification,independent verifier
+N4,contract,claim boundaries
+N5,benchmark,failure benchmarks
+N6,warehouse,DuckDB warehouse
+N7,report,public audit report
+N8,dashboard,static dashboard

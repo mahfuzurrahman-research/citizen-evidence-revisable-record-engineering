@@ -1,0 +1,5 @@
+scenario_id,visibility,verification_rate,correction_rate,eligible_cases
+SYN01,0.90,0.80,0.70,40
+SYN02,0.65,0.75,0.60,50
+SYN03,0.45,0.55,0.50,60
+SYN04,0.30,0.40,0.35,70

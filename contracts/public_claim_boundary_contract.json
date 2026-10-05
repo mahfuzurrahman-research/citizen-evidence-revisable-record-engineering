@@ -1,0 +1,8 @@
+{
+  "contract_name": "public_synthetic_claim_boundaries",
+  "version": "1.0",
+  "required_boundaries": 5,
+  "inferred_transitions_allowed": false,
+  "empirical_field_findings": false,
+  "causal_effects": false
+}

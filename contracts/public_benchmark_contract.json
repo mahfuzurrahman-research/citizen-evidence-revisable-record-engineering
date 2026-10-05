@@ -1,0 +1,37 @@
+{
+  "contract_name": "public_synthetic_failure_benchmarks",
+  "version": "1.0",
+  "synthetic": true,
+  "benchmarks": [
+    {
+      "id": "F01",
+      "name": "visibility outside unit interval",
+      "expected": "REJECT"
+    },
+    {
+      "id": "F02",
+      "name": "verification rate outside unit interval",
+      "expected": "REJECT"
+    },
+    {
+      "id": "F03",
+      "name": "correction rate outside unit interval",
+      "expected": "REJECT"
+    },
+    {
+      "id": "F04",
+      "name": "nonpositive eligible cases",
+      "expected": "REJECT"
+    },
+    {
+      "id": "F05",
+      "name": "forbidden claim escalation",
+      "expected": "REJECT"
+    },
+    {
+      "id": "F06",
+      "name": "inferred lineage edge",
+      "expected": "REJECT"
+    }
+  ]
+}

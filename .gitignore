@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+outputs/*
+!outputs/.gitkeep
+*.duckdb
+*.db
+.DS_Store

@@ -1,0 +1,8 @@
+.git
+.gitignore
+outputs
+__pycache__
+*.pyc
+*.duckdb
+*.db
+.DS_Store

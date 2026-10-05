@@ -1,0 +1,8 @@
+{
+  "contract_name": "public_explicit_lineage",
+  "version": "1.0",
+  "expected_node_count": 8,
+  "expected_edge_count": 7,
+  "inferred_edges_allowed": false,
+  "required_explicit_edges": true
+}

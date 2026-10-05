@@ -1,0 +1,6 @@
+boundary_id,source_concept,prohibited_target,rule
+B01,synthetic_result,empirical_finding,synthetic evidence is not empirical field evidence
+B02,technical_validation,scientific_validity,engineering validation is not scientific validity
+B03,record_presence,lawful_authority,record presence is not lawful authority
+B04,administrative_action,successful_remedy,administrative action is not successful remedy
+B05,model_output,causal_effect,model output is not causal evidence
