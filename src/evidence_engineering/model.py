@@ -1,13 +1,17 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
+import math
+from dataclasses import asdict, dataclass
 
 
 def _prob(value: float, name: str) -> float:
-    value = float(value)
-    if not 0.0 <= value <= 1.0:
+    if (
+        type(value) not in (int, float)
+        or not math.isfinite(value)
+        or not 0.0 <= value <= 1.0
+    ):
         raise ValueError(f"{name} must be in [0,1]")
-    return value
+    return float(value)
 
 
 @dataclass(frozen=True)
@@ -20,10 +24,16 @@ class Scenario:
 
 
 def validate_scenario(s: Scenario) -> Scenario:
+    if (
+        not isinstance(s.scenario_id, str)
+        or not s.scenario_id
+        or s.scenario_id != s.scenario_id.strip()
+    ):
+        raise ValueError("scenario_id must be a nonblank unpadded string")
     _prob(s.visibility, "visibility")
     _prob(s.verification_rate, "verification_rate")
     _prob(s.correction_rate, "correction_rate")
-    if not isinstance(s.eligible_cases, int) or s.eligible_cases <= 0:
+    if type(s.eligible_cases) is not int or s.eligible_cases <= 0:
         raise ValueError("eligible_cases must be a positive integer")
     return s
 

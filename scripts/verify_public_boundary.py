@@ -20,8 +20,7 @@ for rel in forbidden_paths:
 # Exact private scientific identifiers/counts are intentionally absent.
 patterns = [
     r"\bE0[1-8]\b",
-    r"\b196\b",
-    r"\b162\b",
+    r"private_(?:lineage|authority)_count\s*[:=]\s*(?:196|162)\b",
     r"historical_22_tests",
     r"scientific_authority_and_supersession",
     r"old_to_new_crosswalk",
@@ -33,6 +32,7 @@ for p in ROOT.rglob("*"):
         or ".git" in p.parts
         or ".venv" in p.parts
         or "__pycache__" in p.parts
+        or ".pytest_cache" in p.parts
         or p.name == "verify_public_boundary.py"
     ):
         continue

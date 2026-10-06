@@ -2,13 +2,13 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from .io import load_scenarios
-from .verification import verify_scenario
-from .claims import validate_boundaries
-from .lineage import build_lineage
 from .benchmarks import run_benchmarks
-from .warehouse import build_warehouse, qa_summary
+from .claims import validate_boundaries
+from .io import load_scenarios
+from .lineage import build_lineage
 from .reporting import write_reports
+from .verification import verify_scenario
+from .warehouse import build_warehouse, qa_summary
 
 
 def run_pipeline(root: Path) -> dict:
@@ -17,9 +17,9 @@ def run_pipeline(root: Path) -> dict:
     scenarios = load_scenarios(root / "data/synthetic/scenarios.csv")
     verification_rows = [verify_scenario(s) for s in scenarios]
     verification = {
-        "status":"PASS",
-        "scenario_count":len(verification_rows),
-        "max_abs_difference":max(r["max_abs_difference"] for r in verification_rows),
+        "status": "PASS",
+        "scenario_count": len(verification_rows),
+        "max_abs_difference": max(r["max_abs_difference"] for r in verification_rows),
     }
 
     claim = validate_boundaries(
@@ -54,19 +54,19 @@ def run_pipeline(root: Path) -> dict:
         con.close()
 
     payload = {
-        "verification":verification,
-        "claim_boundaries":claim,
-        "lineage":{
-            "status":lineage["status"],
-            "node_count":lineage["node_count"],
-            "edge_count":lineage["edge_count"],
+        "verification": verification,
+        "claim_boundaries": claim,
+        "lineage": {
+            "status": lineage["status"],
+            "node_count": lineage["node_count"],
+            "edge_count": lineage["edge_count"],
         },
-        "benchmarks":{
-            "status":benchmarks["status"],
-            "benchmark_count":benchmarks["benchmark_count"],
-            "pass_count":benchmarks["pass_count"],
+        "benchmarks": {
+            "status": benchmarks["status"],
+            "benchmark_count": benchmarks["benchmark_count"],
+            "pass_count": benchmarks["pass_count"],
         },
-        "warehouse_quality":qa,
+        "warehouse_quality": qa,
     }
 
     write_reports(payload, root / "outputs")

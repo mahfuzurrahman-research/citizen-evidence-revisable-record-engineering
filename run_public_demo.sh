@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+cd "$(dirname "$0")"
 export PYTHONPATH="$PWD:${PYTHONPATH:-}"
 
-rm -rf outputs/*
 mkdir -p outputs
 
 python3 scripts/verify_public_boundary.py

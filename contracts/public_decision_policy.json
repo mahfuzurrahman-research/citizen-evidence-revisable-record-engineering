@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "synthetic": true,
+  "calibration_cutoff": "2026-01-15T00:00:00Z",
+  "default_as_of": "2026-02-01T00:00:00Z",
+  "weights": {"mismatch": 50, "provenance_gap": 30, "source_conflict": 20},
+  "candidate_thresholds_bps": [2500, 3500, 4500, 5500, 6500, 7500],
+  "priority_threshold_bps": 8000,
+  "false_negative_cost": 5,
+  "false_positive_cost": 1,
+  "minimum_labels": 40,
+  "minimum_class_labels": 10,
+  "minimum_cohort_labels": 10,
+  "minimum_recall_bps": 7500,
+  "maximum_review_rate_bps": 6500,
+  "automatic_correction_allowed": false,
+  "score_is_probability": false
+}

@@ -16,28 +16,28 @@ def write_reports(payload: dict, out_dir: Path) -> None:
     md = f"""# Public Engineering Audit
 
 ## Verification
-- Scenarios: {payload['verification']['scenario_count']}
-- Status: **{payload['verification']['status']}**
-- Maximum primary/verifier difference: {payload['verification']['max_abs_difference']}
+- Scenarios: {payload["verification"]["scenario_count"]}
+- Status: **{payload["verification"]["status"]}**
+- Maximum primary/verifier difference: {payload["verification"]["max_abs_difference"]}
 
 ## Claim boundaries
-- Boundaries checked: {payload['claim_boundaries']['boundary_count']}
-- Status: **{payload['claim_boundaries']['status']}**
+- Boundaries checked: {payload["claim_boundaries"]["boundary_count"]}
+- Status: **{payload["claim_boundaries"]["status"]}**
 
 ## Lineage
-- Nodes: {payload['lineage']['node_count']}
-- Edges: {payload['lineage']['edge_count']}
-- Status: **{payload['lineage']['status']}**
+- Nodes: {payload["lineage"]["node_count"]}
+- Edges: {payload["lineage"]["edge_count"]}
+- Status: **{payload["lineage"]["status"]}**
 
 ## Synthetic failure-mode benchmarks
-- Benchmarks: {payload['benchmarks']['benchmark_count']}
-- Passed: {payload['benchmarks']['pass_count']}
-- Status: **{payload['benchmarks']['status']}**
+- Benchmarks: {payload["benchmarks"]["benchmark_count"]}
+- Passed: {payload["benchmarks"]["pass_count"]}
+- Status: **{payload["benchmarks"]["status"]}**
 
 ## DuckDB quality
-- Checks: {payload['warehouse_quality']['total_checks']}
-- Failed checks: {payload['warehouse_quality']['failed_checks']}
-- Status: **{payload['warehouse_quality']['status']}**
+- Checks: {payload["warehouse_quality"]["total_checks"]}
+- Failed checks: {payload["warehouse_quality"]["failed_checks"]}
+- Status: **{payload["warehouse_quality"]["status"]}**
 
 ## Boundary
 This report contains only synthetic public engineering evidence. It is not an empirical result from the private study.
